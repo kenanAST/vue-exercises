@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>To Do App Exercise</title>
+	</head>
+
+	<body>
+		<div id="app">
+			<input type="text" v-model="taskInput" />
+			<button v-on:click="addTask">Add</button>
+			<ul>
+				<li v-for="task in taskList">
+					{{ task }}
+					<button v-on:click="deleteTask(task)">Delete</button>
+				</li>
+			</ul>
+		</div>
+		<script src="https://unpkg.com/vue@next"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
