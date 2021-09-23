@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Multiplication Title</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+
+	<body>
+		<div id="multiplicationTable">
+			<input type="number" v-model="length" placeholder="length" />
+			<input type="number" v-model="width" placeholder="width" />
+
+			<table>
+				<tr v-for="(i, index) in length" :key="index">
+					<td v-for="(j, index) in width" :key="index">{{ i*j }}</td>
+				</tr>
+			</table>
+		</div>
+		<script src="https://unpkg.com/vue@next"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
+
+<!-- for(int i = 0; i<length i++){
+    for(int j = 0; j<width; j++){
+        cout << "i*j";
+    }
+    cout << "\n";
+} -->

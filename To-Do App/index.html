@@ -5,8 +5,9 @@
 
 	<body>
 		<div id="app">
-			<input type="text" v-model="taskInput" />
-			<button v-on:click="addTask">Add</button>
+			<input type="text" v-model="taskInput" required />
+			<input type="submit" value="Add" v-on:click="addTask" />
+			<a v-bind:href="vueLink">{{joshuaKenan}}</a>
 			<ul>
 				<li v-for="task in taskList">
 					{{ task }}

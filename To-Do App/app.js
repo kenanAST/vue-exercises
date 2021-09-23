@@ -3,11 +3,15 @@ Vue.createApp({
 		return {
 			taskList: [],
 			taskInput: '',
+			joshuaKenan: 'Kenan Cinchess',
+			vueLink: 'https://google.com',
 		};
 	},
 	methods: {
 		addTask() {
-			this.taskList.push(this.taskInput);
+			if (/\S/.test(this.taskInput)) {
+				this.taskList.push(this.taskInput);
+			}
 			this.taskInput = '';
 		},
 		deleteTask(task) {

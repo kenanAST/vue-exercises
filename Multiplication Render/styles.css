@@ -1,0 +1,15 @@
+table {
+	margin: auto;
+	margin-top: 5%;
+	border: solid black 0.2px;
+	text-align: center;
+}
+
+input {
+	margin: auto;
+}
+
+td {
+	padding: 5px;
+	border: solid black 0.2px;
+}
