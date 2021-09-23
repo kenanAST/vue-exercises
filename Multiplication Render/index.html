@@ -10,8 +10,8 @@
 			<input type="number" v-model="width" placeholder="width" />
 
 			<table>
-				<tr v-for="(i, index) in length" :key="index">
-					<td v-for="(j, index) in width" :key="index">{{ i*j }}</td>
+				<tr v-for="i in length">
+					<td v-for="j in width">{{ i*j }}</td>
 				</tr>
 			</table>
 		</div>

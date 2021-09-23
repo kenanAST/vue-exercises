@@ -7,11 +7,11 @@ app = Vue.createApp({
 		};
 	},
 	methods: {
-		createTable() {
-			this.length = parseInt(this.length);
-			this.width = parseInt(this.width);
-			this.displayTable = true;
-		},
+		// createTable() {
+		// 	this.length = parseInt(this.length);
+		// 	this.width = parseInt(this.width);
+		// 	this.displayTable = true;
+		// },
 	},
 });
 
