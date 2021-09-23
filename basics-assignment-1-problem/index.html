@@ -27,9 +27,7 @@
 				<img v-bind:src="imageUrl" />
 			</div>
 			<!-- 6) Prepopulate the input field with your name via the "value" attribute -->
-			<input type="text" v-model = "name"/>
+			<input type="text" v-bind:value="name">
 		</section>
-		<script src="https://unpkg.com/vue@next"></script>
-		<script src="app.js"></script>
 	</body>
 </html>
