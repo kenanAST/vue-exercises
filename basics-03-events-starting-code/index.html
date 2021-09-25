@@ -19,7 +19,7 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="add(5)">Add</button>
-      <button v-on:click="subtract(5)">Remove</button>
+      <button v-on:click.right="subtract(5)">Remove</button>
       <p>Result: {{ counter }}</p>
 
       <input type="text" v-on:input="setName($event, 'Cinches')">
@@ -27,6 +27,11 @@
 
       <input type="text" v-model="username">
       <p>Your Name: {{ username }}</p>
+
+      <form v-on:submit.prevent="submitButton">
+        <input type="text">
+        <button>Submit</button>
+      </form>
 
     </section>
   </body>
