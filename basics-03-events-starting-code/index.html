@@ -28,6 +28,9 @@
       <input type="text" v-model="username">
       <p>Your Name: {{ username }}</p>
 
+      <input type="text" v-model = "username" v-on:keyup.Enter = "confirmName()">
+      <p>Your Name: {{ confirmedName }}</p>
+
       <form v-on:submit.prevent="submitButton">
         <input type="text">
         <button>Submit</button>
