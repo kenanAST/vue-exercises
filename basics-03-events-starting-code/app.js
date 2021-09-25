@@ -7,12 +7,12 @@ const app = Vue.createApp({
 
   methods: {
     
-    add(){
-      this.counter++;
+    add(num){
+      this.counter += num;
     },
 
-    subtract(){
-      this.counter--;
+    subtract(num){
+      this.counter -= num;
     }
 
   }
