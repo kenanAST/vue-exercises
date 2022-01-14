@@ -2,11 +2,14 @@
 	<section>
 		<div>
 			<h1>Students</h1>
-			<ul v-for="student in students" v-bind:key="student">
-				<li v-for="attribute in student" v-bind:key="attribute">
-					{{ attribute }}
-				</li>
-			</ul>
+			<button @click="toggleVisibility">Show Students</button>
+			<div v-if="detailsVisibility">
+				<ul v-for="student in students" v-bind:key="student">
+					<li v-for="attribute in student" v-bind:key="attribute">
+						{{ attribute }}
+					</li>
+				</ul>
+			</div>
 		</div>
 	</section>
 </template>
@@ -15,6 +18,7 @@
 export default {
 	data() {
 		return {
+			detailsVisibility: false,
 			students: [
 				{
 					firstName: 'Joshua Kenan',
@@ -30,6 +34,12 @@ export default {
 				},
 			],
 		};
+	},
+	methods: {
+		toggleVisibility() {
+			this.detailsVisibility = !this.detailsVisibility;
+			console.log(this.detailsVisibility);
+		},
 	},
 };
 </script>
