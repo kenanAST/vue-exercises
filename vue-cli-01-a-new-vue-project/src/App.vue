@@ -34,7 +34,14 @@ export default {
 	},
 	methods: {
 		createStudent(student) {
-			this.students.push(student);
+			const newStudent = {
+				firstName: student.firstName,
+				lastName: student.lastName,
+				age: student.age,
+				email: student.email,
+				isfavorite: student.isfavorite,
+			};
+			this.students.push(newStudent);
 		},
 
 		toggleFavoriteStatus(name) {

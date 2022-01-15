@@ -46,7 +46,6 @@ export default {
 				(this.students.email = '');
 		},
 		addStudent() {
-			alert('brrt');
 			this.$emit('create-student', this.students);
 			this.clearForm();
 		},
