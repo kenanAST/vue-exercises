@@ -5,8 +5,7 @@
 		v-bind:student="student"
 		@toggle-favorite="toggleFavoriteStatus"
 	></student-contact>
-	<input type="number" v-model="length" />
-	<input type="text" v-model="length" />
+	<add-student @create-student="createStudent"></add-student>
 	<h1>{{ length }}</h1>
 </template>
 
@@ -35,6 +34,9 @@ export default {
 		};
 	},
 	methods: {
+		createStudent(student) {
+			this.students.push(student);
+		},
 		toggleFavoriteStatus(name) {
 			const identifiedStudent = this.students.find(
 				(student) => student.firstName === name
