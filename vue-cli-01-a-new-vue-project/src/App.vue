@@ -1,12 +1,11 @@
 <template>
+	<add-student @create-student="createStudent"></add-student>
 	<student-contact
 		v-for="student in students"
-		v-bind:key="student"
-		v-bind:student="student"
+		:key="student"
+		:student="student"
 		@toggle-favorite="toggleFavoriteStatus"
 	></student-contact>
-	<add-student @create-student="createStudent"></add-student>
-	<h1>{{ length }}</h1>
 </template>
 
 <script>
@@ -37,6 +36,7 @@ export default {
 		createStudent(student) {
 			this.students.push(student);
 		},
+
 		toggleFavoriteStatus(name) {
 			const identifiedStudent = this.students.find(
 				(student) => student.firstName === name

@@ -2,22 +2,22 @@
 	<form @submit.prevent="addStudent">
 		<input
 			type="text"
-			v-model="student.firstName"
+			v-model="students.firstName"
 			placeholder="Enter First Name"
 		/><br />
 		<input
 			type="text"
-			v-model="student.lastName"
+			v-model="students.lastName"
 			placeholder="Enter Last Name"
 		/><br />
 		<input
 			type="number"
-			v-model="student.age"
+			v-model="students.age"
 			placeholder="Enter age"
 		/><br />
 		<input
 			type="email"
-			v-model="student.email"
+			v-model="students.email"
 			placeholder="Enter email"
 		/><br />
 		<button>Add Student</button>
@@ -29,17 +29,26 @@ export default {
 	emits: ['create-student'],
 	data() {
 		return {
-			student: {
+			students: {
 				firstName: '',
 				lastName: '',
-				age: 0,
+				age: '',
 				email: '',
+				isfavorite: true,
 			},
 		};
 	},
 	methods: {
+		clearForm() {
+			(this.students.firstName = ''),
+				(this.students.lastName = ''),
+				(this.students.age = ''),
+				(this.students.email = '');
+		},
 		addStudent() {
-			this.$emit('create-student', this.student);
+			alert('brrt');
+			this.$emit('create-student', this.students);
+			this.clearForm();
 		},
 	},
 };
