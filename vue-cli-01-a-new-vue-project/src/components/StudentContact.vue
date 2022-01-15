@@ -25,6 +25,10 @@ export default {
 		student: Object,
 	},
 
+	// emits: ['toggle-favorite'],
+
+	emits: ['toggle-favorite'],
+
 	data() {
 		return {
 			detailsVisibility: false,

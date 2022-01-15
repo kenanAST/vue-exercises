@@ -5,13 +5,17 @@
 		v-bind:student="student"
 		@toggle-favorite="toggleFavoriteStatus"
 	></student-contact>
-	<h1></h1>
+	<input type="number" v-model="length" />
+	<input type="text" v-model="length" />
+	<h1>{{ length }}</h1>
 </template>
 
 <script>
 export default {
 	data() {
 		return {
+			length: 25,
+			width: 10,
 			students: [
 				{
 					firstName: 'Joshua Kenan',
@@ -21,10 +25,10 @@ export default {
 					isfavorite: true,
 				},
 				{
-					firstName: 'Trisha Mae',
-					lastName: 'Juntado',
+					firstName: 'Kenan Joshua',
+					lastName: 'Sanchoez',
 					age: 21,
-					email: 'trishamae.juntado@g.msuiit.edu.ph',
+					email: 'test@g.msuiit.edu.ph',
 					isfavorite: false,
 				},
 			],
