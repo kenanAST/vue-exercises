@@ -3,6 +3,7 @@
 		v-for="student in students"
 		v-bind:key="student"
 		v-bind:student="student"
+		@toggle-favorite="toggleFavoriteStatus"
 	></student-contact>
 	<h1></h1>
 </template>
@@ -28,6 +29,14 @@ export default {
 				},
 			],
 		};
+	},
+	methods: {
+		toggleFavoriteStatus(name) {
+			const identifiedStudent = this.students.find(
+				(student) => student.firstName === name
+			);
+			identifiedStudent.isfavorite = !identifiedStudent.isfavorite;
+		},
 	},
 };
 </script>

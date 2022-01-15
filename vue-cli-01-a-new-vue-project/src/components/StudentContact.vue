@@ -3,8 +3,9 @@
 		<div class="student-card">
 			<h3>
 				{{ student.firstName }} {{ student.lastName }}
-				{{ isfavoriteStudent === true }}
+				{{ student.isfavorite ? 'Favorite' : '' }}
 			</h3>
+			<button @click="toggleFavorite">Toggle Favorite</button>
 			<button @click="toggleVisibility">Show details</button>
 			<div v-if="detailsVisibility">
 				<ul>
@@ -27,13 +28,15 @@ export default {
 	data() {
 		return {
 			detailsVisibility: false,
-			isfavoriteStudent: this.student.isfavorite,
 		};
 	},
 	methods: {
 		toggleVisibility() {
 			this.detailsVisibility = !this.detailsVisibility;
 			console.log(this.detailsVisibility);
+		},
+		toggleFavorite() {
+			this.$emit('toggle-favorite', this.student.firstName);
 		},
 	},
 };
