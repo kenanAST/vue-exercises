@@ -1,10 +1,13 @@
 <template>
 	<section>
-		<div>
-			<h1>Students</h1>
-			<button @click="toggleVisibility">Show Students</button>
+		<div class="student-card">
+			<h3>
+				{{ student.firstName }} {{ student.lastName }}
+				{{ isfavoriteStudent === true }}
+			</h3>
+			<button @click="toggleVisibility">Show details</button>
 			<div v-if="detailsVisibility">
-				<ul v-for="student in students" v-bind:key="student">
+				<ul>
 					<li v-for="attribute in student" v-bind:key="attribute">
 						{{ attribute }}
 					</li>
@@ -16,23 +19,15 @@
 
 <script>
 export default {
+	// props: ['firstName', 'lastName', 'age', 'email'],
+	props: {
+		student: Object,
+	},
+
 	data() {
 		return {
 			detailsVisibility: false,
-			students: [
-				{
-					firstName: 'Joshua Kenan',
-					lastName: 'Cinches',
-					age: 20,
-					email: 'kenanjoshua3454@gmail.com',
-				},
-				{
-					firstName: 'Trisha Mae',
-					lastName: 'Juntado',
-					age: 21,
-					email: 'trishamae.juntado@g.msuiit.edu.ph',
-				},
-			],
+			isfavoriteStudent: this.student.isfavorite,
 		};
 	},
 	methods: {
@@ -44,4 +39,18 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+li {
+	text-align: left;
+}
+.student-card {
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+	background-color: beige;
+	max-width: 25%;
+}
+body {
+	background-color: white;
+}
+</style>
