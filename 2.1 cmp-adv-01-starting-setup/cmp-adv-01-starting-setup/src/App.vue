@@ -1,12 +1,16 @@
 <template>
 	<div>
 		<the-header></the-header>
-		<badge-list></badge-list>
-		<user-info
-			:full-name="activeUser.name"
-			:info-text="activeUser.description"
-			:role="activeUser.role"
-		></user-info>
+		<base-card>
+			<badge-list></badge-list>
+		</base-card>
+		<base-card>
+			<user-info
+				:full-name="activeUser.name"
+				:info-text="activeUser.description"
+				:role="activeUser.role"
+			></user-info>
+		</base-card>
 	</div>
 </template>
 
